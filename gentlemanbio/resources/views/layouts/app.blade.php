@@ -103,7 +103,7 @@
                     <h3 class="text-lg font-bold mb-4">Contact</h3>
                     <ul class="space-y-2 text-gray-300">
                         <li>Email: contact@gentlemanbio.com</li>
-                        <li>Tél: 01 23 45 67 89</li>
+                        <li>Tél: 07 69 17 10 25</li>
                     </ul>
                 </div>
             </div>
