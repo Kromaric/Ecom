@@ -9,7 +9,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @foreach($products as $product)
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="{{ $product->image_url ?? asset('images/placeholder.jpg') }}"
+                    <img src="{{ asset('images/default-product.png') }}"
                          alt="{{ $product->name }}"
                          class="w-full h-48 object-cover">
 

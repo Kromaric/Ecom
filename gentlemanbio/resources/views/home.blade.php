@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <h1>Bienvenue sur GentlemanBio</h1>
-            
+
             {{-- Section Produits Vedettes --}}
             <section class="featured-products my-5">
                 <h2>Nos Produits Vedettes</h2>
@@ -13,7 +13,8 @@
                     @foreach($featuredProducts as $product)
                         <div class="col-md-4 mb-4">
                             <div class="card">
-                                <img src="{{ $product->image_url }}" class="card-img-top" alt="{{ $product->name }}">
+                                <img src="{{ asset('images/default-product.png') }}"
+                                    class="card-img-top" alt="{{ $product->name }}">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $product->name }}</h5>
                                     <p class="card-text">{{ $product->short_description }}</p>
@@ -44,4 +45,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection

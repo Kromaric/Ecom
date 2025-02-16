@@ -45,7 +45,7 @@
                     <tr class="border-b hover:bg-gray-50">
                         <td class="py-4">
                             <div class="flex items-center">
-                                <img src="{{ $product->image_url ?? asset('images/placeholder.jpg') }}"
+                                <img src="images/products/default-product.png"
                                      alt="{{ $product->name }}"
                                      class="w-12 h-12 object-cover rounded">
                                 <div class="ml-4">

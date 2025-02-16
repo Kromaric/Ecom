@@ -15,9 +15,10 @@ use App\Http\Controllers\{
 use App\Http\Controllers\Admin\AdminDashboardController;
 
 // Routes publiques
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{product:slug}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/checkout', [OrderController::class, 'showCheckout'])->name('checkout');
 
 // Routes du panier (publiques)
 Route::prefix('cart')->group(function () {
@@ -27,10 +28,14 @@ Route::prefix('cart')->group(function () {
     Route::delete('/clear', [CartController::class, 'clear'])->name('cart.clear');
 });
 
-// Routes d'authentification (Breeze)
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+// Routes utilisateur standard
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     // Profil utilisateur
@@ -44,7 +49,9 @@ Route::middleware('auth')->group(function () {
     // Commandes utilisateur
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
-    Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+    // Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+    Route::post('/checkout', [OrderController::class, 'store'])->name('checkout.process'); // <-- Modifié ici
+    Route::get('/order-confirmation', [OrderController::class, 'confirmation'])->name('orders.confirmation');
 });
 
 // Routes administrateur

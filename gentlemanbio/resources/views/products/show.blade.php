@@ -7,9 +7,9 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Images du produit -->
         <div>
-            <img src="{{ $product->image_url ?? asset('images/placeholder.jpg') }}"
-                 alt="{{ $product->name }}"
-                 class="w-full h-96 object-cover rounded-lg">
+            <img src="{{ asset('images/default-product.png') }}"
+                alt="{{ $product->name }}"
+                class="w-full h-96 object-cover rounded-lg">
         </div>
 
         <!-- Informations produit -->

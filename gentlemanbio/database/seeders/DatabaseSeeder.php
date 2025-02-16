@@ -19,16 +19,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $this->call([
-        //     AdminSeeder::class,
-        //     // ... autres seeders existants ...
-        // ]);
+        $this->call([
+            AdminSeeder::class,
+            // ... autres seeders existants ...
+        ]);
 
         // Créer quelques catégories
         Category::factory(5)->create();
 
         // Créer des tags
         $tags = Tag::factory(10)->create();
+
+        // Créer des variantes de produits
+        ProductVariant::factory(50)->create();
 
         // Créer des produits avec variants et tags
         Product::factory(20)

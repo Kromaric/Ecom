@@ -24,7 +24,7 @@
                     @endphp
 
                     <div class="flex items-center border-b pb-6">
-                        <img src="{{ $product->image_url ?? asset('images/placeholder.jpg') }}"
+                        <img src="{{ $product->image ?? asset('images/default-product.png') }}"
                              alt="{{ $product->name }}"
                              class="w-24 h-24 object-cover rounded">
 
